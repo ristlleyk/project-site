@@ -1,0 +1,382 @@
+@import url('/css/reset.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Press+Start+2P&display=swap');
+
+/* Основные стили */
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    background-color: var(--main-color);
+    color: var(--font-color);
+    font-family: 'Montserrat', sans-serif;
+
+    --main-color: #DCE1DE;
+    --font-color: #1F2421;
+    --second-color: #216869;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* body.dark {
+    --main-color: #49A078;
+    --font-color: #DCE1DE;
+    --second-color: #1F2421;
+} */
+
+body.dark {
+    --main-color: #49A078;
+    --font-color: #1F2421;
+    --second-color: #1F2421;
+}
+
+.container {
+    max-width: 1630px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.nav {
+    display: grid; 
+    height: 82px;
+    max-width: 1630px;
+    grid-template-columns: 4fr 4fr 4fr;
+    position: fixed;
+    z-index: 9;
+}
+
+.nav-bg {
+    width: 100vw;
+    height: 82px;
+    background: var(--main-color);
+    position: fixed;
+    margin: 0 auto;
+    left: 0;
+    z-index: 9;
+}
+
+.nav-list {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    gap: 450px;
+}
+
+.nav-list__link:hover {
+    color: var(--second-color);
+}
+
+.nav-list__link {
+    color: var(--font-color);
+}
+
+.logo {
+    width: 50px;
+    align-self: center;
+}
+
+#toggle-theme-btn {
+    justify-self: end;
+    align-self: center;
+    cursor: pointer;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+}
+
+.main__cards {
+    padding-top: 490px;
+}
+
+.card_desc {
+    display: none;
+}
+
+.card{
+    display: grid;
+    padding: 60px 50px;
+    width: 385px;
+    height: 300px;
+    gap: 79px;
+    border-radius: 40px;
+    border: 3px solid var(--second-color);
+    text-align: center;
+    color: var(--font-color);
+    transition: all .2s ease;
+    justify-self: center;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+h2, .card__title {
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 32px;
+}
+
+h1, .main__title {
+    padding-top: 170px;
+    color: var(--font-color);
+    font-size: 38px;
+    font-family: 'Press Start 2P', sans-serif;
+    text-align: center;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.btn {
+    width: 200px;
+    height: 60px;
+    border-radius: 40px;
+    background: var(--second-color);
+    color: var(--main-color);
+}
+
+.card__btn {
+    justify-self: center;
+    padding: 22px;
+}
+
+.btn-row {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 100px;
+}
+
+.next-btn {
+    padding: 17px;
+    text-align: end;
+    transition: all .2s ease;
+}
+
+.previous-btn {
+    padding: 17px;
+    text-align: start;
+    transition: all .2s ease;
+}
+
+.btn_hover:hover {
+    background: var(--font-color);
+}
+
+.main {
+    /* height: 100vh; */
+    margin-bottom: 350px;
+    flex-grow: 1;
+}
+
+.footer {
+    padding-top: 70px;
+    height: 150px;
+    text-align: center;
+    background: var(--second-color);
+    color: var(--main-color);
+}
+
+/* Уникальные стили для главной страницы */
+
+.header__content {
+    text-align: center;
+    /* padding-top: 382px; */
+    padding-top: 250px;
+}
+
+.header__title {
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 128px;
+    margin-bottom: 70px;
+}
+
+.header__desc {
+    color: var(--second-color);
+    font-family: Montserrat;
+    font-size: 64px;
+}
+
+.header__text {
+    margin-bottom: 300px;
+}
+
+.home-page_card_hover:hover .card_desc {
+    display: block;
+}
+
+.home-page_card_hover:hover {
+    height: 485px;
+}
+
+/* Уникальные стили для ЕГЭ страницы */
+
+.nav-list_item_underlined {
+    border-bottom: 3px solid var(--second-color);
+}
+
+.choose-ex__card {
+    padding: 25px;
+    margin: 20px;
+    display: grid;
+    width: 385px;
+    height: auto;
+    border-radius: 40px;
+    border: 3px solid var(--second-color);
+    text-align: center;
+    transition: all .2s ease;
+    justify-self: center;
+    gap: 20px;
+}
+
+.ex__link {
+    color: var(--font-color);
+    transition: color .2s;
+}
+
+.ex__link:hover {
+    color: var(--second-color);
+}
+
+#choose-ex__practice-card {
+    position: relative;
+    right: -800px;
+}
+
+/* Уникальные стили для страниц с практическими заданиями */
+
+.exercise {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 100px auto; 
+    width: 1100px;
+    gap: 25px;
+}
+
+.ex-content {
+    max-width: 950px;
+}
+
+.ex-number {
+    width: 50px;
+    padding: 3px;
+    height: 30px;
+    text-align: center;
+    border: 2px solid var(--second-color);
+}
+
+.ex-input-answer-row {
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.ex-input-answer {
+    padding-left: 10px;
+    border: 2px solid var(--font-color);
+    border-radius: 40px;
+    width: 850px;
+    height: 70px;
+}
+
+.ex-input-answer:focus {
+    border: 3px solid var(--second-color);
+}
+
+.answer-btn {
+    position: absolute;
+    right: 5px;
+}
+
+.ex-text {
+    margin: 25px 0;
+}
+
+.ex-picture {
+    margin: 25px;
+}
+
+pre {
+    font-size: 18px;
+}
+
+.correct-answer {
+    background: rgba(0, 255, 0, 0.5);
+    border-radius: 40px;
+}
+
+.wrong-answer {
+    background: rgba(255, 0, 0, 0.5);
+    border-radius: 40px;
+}
+
+.results-container {
+    display: grid;
+    gap: 100px;
+    justify-content: center;
+}
+
+.results {
+    display: grid;
+    gap: 100px;
+}
+
+.results-text {
+    font-size: 28px;
+    justify-self: center;
+}
+
+.results-table {
+    display: flex;
+    justify-self: center;
+    text-align: center;
+}
+
+.your-answers {
+    padding: 5px;
+    border: 3px solid var(--second-color);
+}
+
+.correct-answers {
+    padding: 5px;
+    border: 3px solid var(--second-color);
+}
+
+.back-btn {
+    text-align: center;
+    padding: 18px;
+    justify-self: center;
+    margin-bottom: 100px;
+}
+
+/* Уникальные стили для страниц с теорией */
+
+.theory-content {
+    margin: 70px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.theory-text {
+    line-height: 2;
+}
+
+.ex-example {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.none {
+    display: none;
+}
